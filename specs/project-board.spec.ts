@@ -10,7 +10,6 @@ for (const testCase of testData) {
     test(`${testCase.name}`, async ({ page }) => {
       await page.goto('/');
 
-      await page.pause();
       // Log test information
       console.log(`Executing ${testCase.name}`);
       console.log(`Task: ${testCase.verifications[0].task}`);

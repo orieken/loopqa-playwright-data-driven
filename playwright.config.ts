@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
   use: {
     baseURL: 'https://animated-gingersnap-8cf7f2.netlify.app/',
     browserName: 'chromium',
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
   },
