@@ -1,13 +1,10 @@
 import { test as base } from '@playwright/test';
-import { TestCase } from './types';
-
-export type TestFixtures = {
-  testData: TestCase;
-};
+import { TestFixtures } from './types';
+import { ProjectBoard } from './lib/site/partials/task';
 
 export const test = base.extend<TestFixtures>({
-  // eslint-disable-next-line no-empty-pattern
-  testData: async ({}, use, _testInfo) => {
-    await use({} as TestCase);
+  projectBoard: async ({ page }, use) => {
+    const projectBoard = new ProjectBoard(page);
+    await use(projectBoard);
   },
 });

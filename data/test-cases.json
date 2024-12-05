@@ -9,6 +9,33 @@
           "column": "To Do",
           "tags": ["Feature", "High Priority"]
         }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Web Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "Implement user authentication",
+            "column": "To Do"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Feature", "High Priority"]
+          }
+        }
       ]
     },
     {
@@ -19,6 +46,33 @@
           "task": "Fix navigation bug",
           "column": "To Do",
           "tags": ["Bug"]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Web Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "Fix navigation bug",
+            "column": "To Do"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Bug"]
+          }
         }
       ]
     },
@@ -31,9 +85,35 @@
           "column": "In Progress",
           "tags": ["Design"]
         }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Web Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "Design system updates",
+            "column": "In Progress"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Design"]
+          }
+        }
       ]
-    },
-    {
+    },    {
       "name": "Test Case 4",
       "feature": "Mobile Application",
       "verifications": [
@@ -41,6 +121,33 @@
           "task": "Push notification system",
           "column": "To Do",
           "tags": ["Feature"]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Mobile Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "Push notification system",
+            "column": "To Do"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Feature"]
+          }
         }
       ]
     },
@@ -53,6 +160,33 @@
           "column": "In Progress",
           "tags": ["Feature", "High Priority"]
         }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Mobile Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "Offline mode",
+            "column": "In Progress"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Feature", "High Priority"]
+          }
+        }
       ]
     },
     {
@@ -63,6 +197,33 @@
           "task": "App icon design",
           "column": "Done",
           "tags": ["Design"]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Login to Demo App",
+          "params": {
+            "role": "ADMIN"
+          }
+        },
+        {
+          "name": "Navigate to",
+          "params": {
+            "feature": "Mobile Application"
+          }
+        },
+        {
+          "name": "Verify Task in Column",
+          "params": {
+            "task": "App icon design",
+            "column": "Done"
+          }
+        },
+        {
+          "name": "Confirm Tags",
+          "params": {
+            "tags": ["Design"]
+          }
         }
       ]
     }

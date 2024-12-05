@@ -6,14 +6,31 @@ const config: PlaywrightTestConfig = {
   expect: {
     timeout: 5000,
   },
-  reporter: [['html'], ['list']],
+  reporter: [
+    ['html', {
+      outputFolder: 'playwright-report',
+
+      embedAttachments: true,
+    }],
+    ['list'],
+  ],
   use: {
     baseURL: 'https://animated-gingersnap-8cf7f2.netlify.app/',
     browserName: 'chromium',
     headless: true,
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
     trace: 'on-first-retry',
+    video: {
+      mode: 'on',
+      size: {
+        width: 1920,
+        height: 1080,
+      },
+    },
+    viewport: { width: 1920, height: 1080 },
   },
+  outputDir: 'test-results',
+  preserveOutput: 'always',
 };
 
 export default config;

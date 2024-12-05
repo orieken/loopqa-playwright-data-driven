@@ -1,28 +1,36 @@
 import { test } from '../test-setup';
 import { TestCase } from '../types';
-
 import * as testDataFile from '../data/test-cases.json';
+import { createSteps } from './steps';
+import { captureStepScreenshot } from '../config/playwright-reporting';
 
-const testData = (testDataFile as { testCases: TestCase[] }).testCases;
+const testData = (testDataFile as unknown as { testCases: TestCase[] }).testCases;
+
+if (!testData) {
+  console.error("testData is undefined or null");
+}
 
 for (const testCase of testData) {
   test.describe(`Feature: ${testCase.feature}`, () => {
-    test(`${testCase.name}`, async ({ page }) => {
-      await page.goto('/');
+    test(`${testCase.name}`, async ({ page, projectBoard }) => {
+      // const videoPath = `./test-results/videos/${testCase.name.replace(/\s+/g, '-').toLowerCase()}.webm`;
+      // await page.video()?.saveAs(videoPath);
 
-      // Log test information
-      console.log(`Executing ${testCase.name}`);
-      console.log(`Task: ${testCase.verifications[0].task}`);
-      console.log(`Column: ${testCase.verifications[0].column}`);
-      console.log(`Tags: ${testCase.verifications[0].tags.join(', ')}`);
 
-      // Placeholder for actual test implementation
-      await page.goto('about:blank');
+      const steps = createSteps(projectBoard);
 
-      // Basic assertion to ensure test runs
-      await test.step(`Verification: ${testCase.verifications[0].task}`, async () => {
-        test.expect(true).toBeTruthy();
-      });
+      for (const step of testCase.steps) {
+        await test.step(step.name, async () => {
+          await steps[step.name](page, step.params);
+
+          const screenshotPath = await captureStepScreenshot(page, step.name);
+          await test.info().attach(`${step.name} Screenshot`, {
+            path: screenshotPath,
+            contentType: 'image/png'
+          });
+        });
+      }
+
     });
   });
 }
