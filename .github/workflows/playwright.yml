@@ -36,6 +36,7 @@ jobs:
   deploy:
     permissions:
       id-token: write
+      pages: write
     needs: test
     environment:
       name: github-pages
