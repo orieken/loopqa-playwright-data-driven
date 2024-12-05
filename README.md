@@ -1,5 +1,6 @@
 # LoopQA Playwright Data-Driven
-[![Playwright Tests](https://github.com/orieken/loopqa-playwright-data-driven/actions/workflows/playwright.yml/badge.svg?branch=main)](https://github.com/orieken/loopqa-playwright-data-driven/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/orieken/loopqa-playwright-data-driven/actions/workflows/playwright.yml/badge.svg?branch=main)](https://github.com/orieken/loopqa-playwright-data-driven/actions/workflows/playwright.yml) 
+[Github Pages Latest Report](https://orieken.github.io/loopqa-playwright-data-driven/)
 
 # Dependencies
 
