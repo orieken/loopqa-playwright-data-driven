@@ -34,6 +34,8 @@ jobs:
         with:
           path: playwright-report/       
   deploy:
+    permissions:
+      id-token: write
     needs: test
     environment:
       name: github-pages
