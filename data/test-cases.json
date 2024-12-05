@@ -113,7 +113,8 @@
           }
         }
       ]
-    },    {
+    },
+    {
       "name": "Test Case 4",
       "feature": "Mobile Application",
       "verifications": [

@@ -1,6 +1,7 @@
 import { test as base } from '@playwright/test';
 import { TestFixtures } from './types';
-import { ProjectBoard } from './lib/site/partials/task';
+import { ProjectBoard } from './lib/site/project-board';
+
 
 export const test = base.extend<TestFixtures>({
   projectBoard: async ({ page }, use) => {

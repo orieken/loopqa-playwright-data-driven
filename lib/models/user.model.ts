@@ -4,14 +4,14 @@ export class User {
   private constructor(
     private readonly username: string,
     private readonly password: string,
-    private readonly role: UserRole
+    private readonly role: UserRole,
   ) {}
 
   public getCredentials(): UserCredentials {
     return {
       username: this.username,
       password: this.password,
-      role: this.role
+      role: this.role,
     };
   }
 

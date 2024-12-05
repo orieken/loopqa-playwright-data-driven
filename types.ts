@@ -9,7 +9,7 @@ export interface StepParams {
   task?: string;
   column?: string;
   tags?: string[];
-  [key: string]: any; // Allow for additional parameters
+  [key: string]: unknown;
 }
 
 export interface Step {
@@ -62,11 +62,7 @@ export interface ConfirmTagsParams extends StepParams {
   tags: string[];
 }
 
-export type AllStepParams =
-  | LoginParams
-  | NavigateParams
-  | VerifyTaskParams
-  | ConfirmTagsParams;
+export type AllStepParams = LoginParams | NavigateParams | VerifyTaskParams | ConfirmTagsParams;
 
 export interface TaskLocation {
   task: Task;
@@ -79,7 +75,7 @@ export type SwimlaneComplete = Swimlane & Locator & (() => Promise<void>) & Page
 
 export enum UserRole {
   ADMIN = 'ADMIN',
-  REGULAR = 'REGULAR'
+  REGULAR = 'REGULAR',
 }
 
 export interface UserCredentials {

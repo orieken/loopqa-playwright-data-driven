@@ -18,12 +18,7 @@ export class Board {
   }
 
   async getAllColumns(): Promise<Swimlane[]> {
-    return [
-      this.toDo,
-      this.inProgress,
-      this.review,
-      this.done
-    ];
+    return [this.toDo, this.inProgress, this.review, this.done];
   }
 
   async findTaskInAnyColumn(taskTitle: string): Promise<{ column: Swimlane; task: Task } | null> {
@@ -76,7 +71,7 @@ export class Board {
     }
 
     const actualTags = await this.currentTaskLocation.task.getTags();
-    return expectedTags.every(tag => actualTags.includes(tag));
+    return expectedTags.every((tag) => actualTags.includes(tag));
   }
 
   async validateTask(taskTitle: string, expectedColumn: string, expectedTags: string[]): Promise<boolean> {

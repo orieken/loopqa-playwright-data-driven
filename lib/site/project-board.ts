@@ -5,7 +5,7 @@ import { Board } from './partials/board';
 import { AvailableBoards } from '../../types';
 
 export class ProjectBoard extends Site {
-  url: string = 'https://animated-gingersnap-8cf7f2.netlify.app/'
+  url: string = 'https://animated-gingersnap-8cf7f2.netlify.app/';
 
   loginPage!: LoginPage;
   currentBoard!: Board;
@@ -28,7 +28,7 @@ export class ProjectBoard extends Site {
       'Web Application': 'Web Application Main web',
       'Mobile Application': 'Mobile Application Native',
       'Marketing Campaign': 'Marketing Campaign Q2',
-    }
+    };
 
     await this.page.getByRole('button', { name: BoardMap[board] }).click();
     this.currentBoard = new Board(this.page);

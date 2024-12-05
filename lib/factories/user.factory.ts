@@ -29,10 +29,6 @@ export class UserFactory {
 
   static createTestUser(role: UserRole = UserRole.REGULAR): User {
     const timestamp = new Date().getTime();
-    return User.create(
-      `testuser_${timestamp}`,
-      `testpass_${timestamp}`,
-      role
-    );
+    return User.create(`testuser_${timestamp}`, `testpass_${timestamp}`, role);
   }
 }

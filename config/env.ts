@@ -11,7 +11,7 @@ const envSchema = z.object({
   ADMIN_PASSWORD: z.string().min(1),
   USER_USERNAME: z.string().min(1),
   USER_PASSWORD: z.string().min(1),
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development')
+  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
 });
 
 // Validate environment variables

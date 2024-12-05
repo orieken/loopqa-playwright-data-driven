@@ -7,7 +7,7 @@ import { captureStepScreenshot } from '../config/playwright-reporting';
 const testData = (testDataFile as unknown as { testCases: TestCase[] }).testCases;
 
 if (!testData) {
-  console.error("testData is undefined or null");
+  console.error('testData is undefined or null');
 }
 
 for (const testCase of testData) {
@@ -15,7 +15,6 @@ for (const testCase of testData) {
     test(`${testCase.name}`, async ({ page, projectBoard }) => {
       // const videoPath = `./test-results/videos/${testCase.name.replace(/\s+/g, '-').toLowerCase()}.webm`;
       // await page.video()?.saveAs(videoPath);
-
 
       const steps = createSteps(projectBoard);
 
@@ -26,11 +25,10 @@ for (const testCase of testData) {
           const screenshotPath = await captureStepScreenshot(page, step.name);
           await test.info().attach(`${step.name} Screenshot`, {
             path: screenshotPath,
-            contentType: 'image/png'
+            contentType: 'image/png',
           });
         });
       }
-
     });
   });
 }

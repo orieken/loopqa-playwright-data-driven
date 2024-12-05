@@ -1,12 +1,7 @@
 import { Page, expect } from '@playwright/test';
-import {
-  AvailableBoards,
-  StepDictionary,
-  StepParams, UserRole,
-} from '../../types';
+import { AvailableBoards, StepDictionary, StepParams, UserRole } from '../../types';
 import { UserFactory } from '../../lib/factories/user.factory';
 import { ProjectBoard } from '../../lib/site/project-board';
-
 
 export const createSteps = (projectBoard: ProjectBoard): StepDictionary => ({
   'Login to Demo App': async (_page: Page, params: StepParams) => {
@@ -14,9 +9,7 @@ export const createSteps = (projectBoard: ProjectBoard): StepDictionary => ({
       throw new Error('Role parameter is required for login');
     }
 
-    const user = params.role === UserRole.ADMIN
-      ? UserFactory.createAdminUser()
-      : UserFactory.createRegularUser();
+    const user = params.role === UserRole.ADMIN ? UserFactory.createAdminUser() : UserFactory.createRegularUser();
 
     await projectBoard.goto();
     await projectBoard.loginPage.login(user);

@@ -7,11 +7,14 @@ const config: PlaywrightTestConfig = {
     timeout: 5000,
   },
   reporter: [
-    ['html', {
-      outputFolder: 'playwright-report',
+    [
+      'html',
+      {
+        outputFolder: 'playwright-report',
 
-      embedAttachments: true,
-    }],
+        embedAttachments: true,
+      },
+    ],
     ['list'],
   ],
   use: {
